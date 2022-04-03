@@ -23,7 +23,6 @@ body {
     color: white;
     font-size: 16px;
     text-align: center;
-    // animation: name duration timing-function delay iteration-count direction fill-mode;
     animation: letter_explode 2.5s forwards linear 200ms;
     @include respond-to("small") {
       font-size: 24px;
