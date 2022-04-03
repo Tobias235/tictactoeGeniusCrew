@@ -2,8 +2,8 @@
 const InitialState = {
   marks: Array(9).fill(null),
   player: "Astronaut",
-  gameEnd: true,
-  tie: true,
+  gameEnd: false,
+  tie: false,
 };
 
 //reducer takes the initial state and depending on which case it
