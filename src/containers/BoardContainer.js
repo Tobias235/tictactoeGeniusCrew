@@ -52,20 +52,46 @@ const BoardContainer = () => {
         //After looped through array it returns all the nested arrays
         //assign the 3 numbers of each array to A, B and C.
         const [a, b, c] = pattern;
+        //an if statement to check if globalSquares[a] is strictly matching with B and C
         if (
           globalSquares[a] &&
           globalSquares[a] === globalSquares[b] &&
           globalSquares[a] === globalSquares[c]
         ) {
+          //if statement is passed. We have a winner and the state will be changed
+          //Dispatching it through actions to change gameEnd to the opposite of current state
           dispatch(setGameEnd(!gameEnd));
         }
       });
     };
+    //run the function to check if anyone won the game
     isGameWon();
+
+    //function to check if theres a tie.
+    const checkTie = () => {
+      //a boolean set to true to see if the squares are filled.
+      let filled = true;
+      //a forEach loop to run through the squares.
+      globalSquares.forEach((square) => {
+        //an if statement to check if theres any squares left that is possible to place a marker on
+        if (square === null) {
+          filled = false;
+        }
+      });
+      //if the board is full, filled will be true and it will dispatch through actions to the reducer
+      //Tie will be set to true and game ended and state is updated
+      if (filled) {
+        dispatch(setTie(true));
+        dispatch(setGameEnd(!gameEnd));
+      }
+    };
+    //run the function to check if theres a tie
+    checkTie();
   }, [globalSquares]);
 
   return (
     <div className={styles.boardContainer}>
+      {/* Take the squares array from state and maps through it to get the 9 squares for the board */}
       {globalSquares.map((square, i) => (
         <Square
           key={i}

@@ -1,6 +1,8 @@
 @use "../assets/util/" as *;
 
 .boardContainer {
+  width: 80%;
+  height: 35%;
   border: 8px solid rgb(10, 23, 62);
   border-radius: 10px;
   margin: 0 auto auto auto;

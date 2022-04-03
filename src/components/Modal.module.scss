@@ -1,5 +1,9 @@
 @use "../assets/util/" as *;
 
+body {
+  overflow-x: hidden;
+}
+
 .modal {
   position: absolute;
   width: 100%;
@@ -10,15 +14,16 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 100px;
+  animation: slide-in 300ms;
   @include respond-to("small") {
     margin-bottom: 0;
   }
 
   h1 {
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
-
+    animation: letter_explode 2.5s 0s forwards linear;
     @include respond-to("small") {
       font-size: 24px;
     }
@@ -26,6 +31,7 @@
 
   img {
     width: 20%;
+    animation: bounce-4 2.5s ease 2s;
     @include respond-to("small") {
       width: 7%;
     }
@@ -40,4 +46,40 @@
   }
 }
 
-// Animation below
+// Keyframe animation below
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes letter_explode {
+  0% {
+    letter-spacing: 0.1em;
+    opacity: 1;
+    left: 100px;
+  }
+  50% {
+    letter-spacing: 0.5em;
+    opacity: 0.4;
+    left: 0px;
+  }
+  100% {
+    letter-spacing: 0.1em;
+    opacity: 1;
+    left: 100px;
+  }
+}
+
+@keyframes bounce-4 {
+  from {
+    transform: scale(1, 1) translateY(0);
+  }
+  to {
+    transform: scale(0.9, 1.1) translateY(-500px);
+  }
+}

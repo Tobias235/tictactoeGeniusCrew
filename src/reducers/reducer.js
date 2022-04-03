@@ -20,7 +20,7 @@ const Reducer = (state = InitialState, action) => {
     case "SET_TIE":
       return { ...state, tie: action.payload };
     case "SET_RESTART":
-      return { InitialState };
+      return { ...InitialState };
     default:
       return state;
   }

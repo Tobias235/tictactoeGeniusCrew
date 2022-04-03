@@ -13,6 +13,7 @@
 
   img {
     max-width: 70%;
+    animation: slide-in 700ms;
 
     @include respond-to("small") {
       width: 60%;
@@ -20,5 +21,18 @@
     @include respond-to("medium") {
       width: 35%;
     }
+  }
+}
+
+//Keyframe animations below
+
+@keyframes slide-in {
+  from {
+    transform: translateY(105%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
