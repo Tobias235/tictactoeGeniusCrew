@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  margin: 50px 0 0 0;
+
+  h1 {
+    font-size: 64px;
+    color: #123f64;
+    text-shadow: 2px 2px rgb(131, 173, 208);
+  }
+}

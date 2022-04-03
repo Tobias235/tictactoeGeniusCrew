@@ -1,13 +1,16 @@
+html,
 body {
+  height: 100%;
+  background-color: rgb(10, 23, 62);
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  height: 100%;
+  width: 100%;
+  background-image: url("./assets/images/tictactoe.svg");
+  background-position: center;
+  background-size: cover;
+  z-index: 20;
 }

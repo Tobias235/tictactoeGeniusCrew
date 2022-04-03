@@ -1,0 +1,19 @@
+@use "../assets/util/" as *;
+
+.boardContainer {
+  width: 85%;
+  height: 40%;
+  border: 8px solid rgb(10, 23, 62);
+  border-radius: 10px;
+  margin: 0 auto auto auto;
+
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+
+  @include respond-to("small") {
+    width: 45%;
+    height: 45%;
+  }
+}
