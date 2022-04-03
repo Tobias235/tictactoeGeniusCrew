@@ -8,7 +8,7 @@ const Square = (props) => {
       onClick={props.onClick}
       value={props.value}
     >
-      {props.image && <img src={props.image} alt="mark" />}
+      {props.image ? <img src={props.image} alt="mark" /> : null}
     </div>
   );
 };

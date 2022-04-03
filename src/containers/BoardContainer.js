@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import Square from "../components/Square";
 import styles from "./BoardContainer.module.scss";
 import astronaut from "../assets/images/astronaut.svg";
@@ -87,7 +89,7 @@ const BoardContainer = () => {
     };
     //run the function to check if theres a tie
     checkTie();
-  }, [globalSquares]);
+  }, [globalSquares, dispatch]);
 
   return (
     <div className={styles.boardContainer}>
