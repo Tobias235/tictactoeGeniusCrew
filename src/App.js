@@ -8,7 +8,7 @@ function App() {
   return (
     <div className={styles.main}>
       <Header />
-      <Modal />
+      {/* <Modal /> */}
       <BoardContainer />
       <Footer />
     </div>
