@@ -10,7 +10,8 @@ function App() {
   return (
     <div className={styles.main}>
       <Header />
-      {isGameEnded ? <Modal /> : null}
+      <Modal />
+      {isGameEnded ? null : null}
       <BoardContainer />
       <Footer />
     </div>
